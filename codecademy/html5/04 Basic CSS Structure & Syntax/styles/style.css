@@ -1,0 +1,34 @@
+/* CSS follows certain best practices for spacing and indentation:
+
+    - One line of spacing between a selector and the opening curly brace.
+    - No spacing between CSS declarations and the opening and closing curly braces of the CSS rule.
+    - Two spaces of indentation for CSS declarations.
+*/
+
+/* universal selector */
+* {
+  font-family: Georgia;
+}
+/* A CSS rule consists of the folowing elements */
+
+/* CSS selector */
+h1 {
+  /* CSS declaration */
+  color: firebrick; /* Semicolon ends all declarations */
+
+  /* More declarations...
+        .
+        .
+        .
+  */
+}
+
+p {
+  font-size: 18px;
+}
+
+/* Multiple selector */
+/* It changes shared properties across all the selected elements */
+h1, p {
+  color: darkslategray;
+}

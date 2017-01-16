@@ -1,0 +1,132 @@
+body {
+  /* Old browsers */
+  background: #141E30;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(-45deg, #35577D, #141E30);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(-45deg, #35577D, #141E30);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #FFF;
+  font-size: 32px;
+  padding-top: 100px;
+  text-align: left;
+  width: 60%;
+  font-family: "Playfair Display", serif; /* main font, fallback font, any serif font */
+}
+
+h2 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 100;
+  font-size: 22px;
+  line-height: 24px;
+  padding-bottom: 30px;
+  text-align: left;
+  width: 70%;
+  font-family: Roboto, sans-serif;
+  word-spacing: 0.05em;
+}
+
+p {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 20px;
+  color: AliceBlue;
+  line-height: 1.7em;
+  text-align: left;
+  width: 100%;
+}
+
+.byline {
+  color: rgba(255, 255, 255, 0.5);
+  float: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  padding-left: 10px;
+  text-transform: uppercase;
+}
+
+.caption {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.65);
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 14px;
+  margin-left: 20px;
+  padding: 10px;
+  position: relative;
+  top: 80%;
+  width: 60%;
+}
+
+.content {
+  padding: 40px;
+}
+
+.image {
+  background-image: url("../img/htmlcss1-img_soccer.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
+.writer-img {
+  -webkit-box-shadow: 5px 0px 5px 0px rgba(0, 0, 50, 0.97);
+  -moz-box-shadow: 5px 0px 5px 0px rgba(0, 0, 50, 0.97);
+  box-shadow: 5px 0px 5px 0px rgba(0, 0, 50, 0.97);
+  float: left;
+  width: 50px;
+}
+
+/*
+FONTS:
+
+The font specified in a stylesheet must be installed on a user's computer in order for that font to display when a user visit the web page. We'll learn how to work around this issue in a later exercise.
+
+It's a good practice to limit the number of typefaces used on a web page to 2 or 3.
+
+When the name of a typeface consists of more than one word, it must be enclosed in double quotes (otherwise it will not be recognized).
+
+Over time, typographers have refined their craft and have developed many different typefaces, which has allowed them, in some cases, to classify them as one of the following two types: serif fonts and sans-serif fonts.
+
+Serif - the letters in these fonts have extra details on the ends of each letter. Examples include fonts like Times New Roman or Georgia, among others.
+Sans-Serif - the letters in these fonts do not have extra details on the ends of each letter. Instead, letters have straight, flat edges. Some examples include Arial or Helvetica.
+
+When the stylesheet specifies a font not installed on a user's computer, the pre-installed fonts can be used as fallback fonts for users.
+
+To use fallback fonts, the following syntax is required:
+
+h1 {
+  font-family: Garamond, Times, serif;
+}
+
+The CSS rule above says: "Use the Garamond font for all <h1> elements on the web page. If that font is not available, use the Times font. If both of those fonts are not available, use any serif font pre-installed on the user's computer." The fonts specified after Garamond are the fallback fonts.
+
+There are three units of measurement for font size:
+
+1. px - Represents the unit of pixels. Pixels are sometimes also referred to as points. Pixels are used to set the exact size of an element, in this case, text.
+2. ems - Pronounced just as it looks, "em." An em is equal to the width of the letter "m". Ems are a relative unit of measurement. They change the size of text relative to the parent element's size of text.
+3. % - Percentages are also a relative unit of measurement. The default size of text in web browsers is 16 pixels, or 16px. When percentages are used, they set the size of text relative to this default size. For example, setting the font size to 200% would be equivalent to setting it to 32px.
+
+line-height property.
+
+p {
+  line-height: 1.5em;
+}
+The line height can be modified using pixels or ems, but the unit of ems is preferred, since ems offer a spacing relative to the size of the text on the page.
+
+You can also increase the spacing between words
+To do so, you can use the word-spacing property:
+
+h1 {
+  word-spacing: 0.3em;
+}
+The default amount of space between words is usually 0.25em. In the example above, the word spacing is set to 0.3em, which represents an increase of only .05em in word spacing.
+It's not common to increase the spacing between words, but it may help enhance the readability of bolded or enlarged text. Note, again, that the preferred unit is ems.
+*/
