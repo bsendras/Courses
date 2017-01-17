@@ -1,0 +1,78 @@
+
+Targeting specific HTML elements:
+
+To label an element with an ID, we can use the id attribute on an HTML element.
+
+Example:
+
+<h1 id="botswana">Botswana</h1>
+
+In the example above, the heading is labeled with an id of botswana.
+
+What purpose do IDs serve? IDs are intended to label unique elements in an HTML file.
+No two HTML elements should ever share the same ID 
+
+In the example above, the heading is labeled with an id of botswana.
+
+All ID selectors begin with the octothorpe character: #. The value of the ID immediately follows the octothorpe.
+Once you've correctly targeted the element, you can proceed to style it as usual
+
+Example:
+
+#botswana {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  top: 25%;
+  width: 60%;
+}
+
+For multiple elements that should share the same styling, classes can be used to label them.
+
+Example:
+  <div  class="partner">
+
+How exactly do you select them in CSS, though?
+Class selectors begin with a period (.) and are immediately followed by the name of the class.
+
+Example:
+
+.partner {
+  font-family: Georgia, Times, serif;
+  color: #A3B4C5;
+  text-transform: uppercase;
+}
+
+The class selector targets all elements of a particular class
+
+What's the difference between the .breaking and p.breaking selectors?
+
+.brteaking {
+
+}
+
+p.breaking {
+
+}
+
+The .breaking selector targets all elements with a class of breaking. The p.breaking selector
+targets only <p> elements with a class of breaking. This type of selector allows you to be even 
+more specific about a particular element's styling, even when that element must share some styling with other elements.
+
+Multiple selectors can be added to the same Css rule
+
+.partner, .prop {
+  text-align: center;  
+}
+
+It's also possible to label HTML elements with more than one class. How is this functionality useful?
+
+You learned that elements that share a styling (e.g. typeface) are labeled with the same class. When those
+same elements must also be differentiated, however, labeling with an additional class is helpful.
+
+<h1 class="book domestic">The Way of the Deep</h1>
+
+<h1 class="book foreign">A Night in the Sky</h1>
+
+To label an HTML element with an additional class, simply include the class within the double quotes, 
+immediately after the first class. it's best to limit an element to four classes at most.
