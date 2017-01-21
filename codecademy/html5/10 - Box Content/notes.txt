@@ -1,0 +1,134 @@
+CSS properties order criteria (convention):
+
+selector {
+    background
+    border
+    color
+    font
+    position
+    dimentions (padding, marging, with, height)
+    transform
+    events
+}
+
+* set the padding for all 4 sides of the box */
+padding: 30px;
+
+/* sets the padding for each side individually */
+padding: 5px 10px 5px 10px; (clockwise rotation: top, rigth, bottom, left)
+
+When this version of the padding property is used, a
+padding value must be specified for all four sides of the content.
+
+When you're certain that the top and bottom values for padding will equal each other,
+and that the left and right values for padding will also equal each other, you can use the following shortcut:
+
+p {
+  padding: 5px 10px; (top-bottom, left-right)
+}
+
+To set each property separately you can use the following properties:
+
+padding-top
+padding-right
+padding-bottom
+padding-left
+
+
+The margin refers to the space directly outside of the box. You can
+adjust this spacing with the margin property.
+
+p {
+  border: 1px solid #23AD44;
+  margin: 20px;
+}
+
+The code in the example above will place 20 pixels of space on the
+outside of the paragraph's box, on all four sides. This means that
+other HTML elements on the page cannot come within 20 pixels of the paragraph.
+
+Same versions of padding propertie are valid for setting the margin.
+
+The margin property also lets you center content, if you follow
+certain requirements. Take a look at the following example.
+
+div.headline {
+  margin: auto;
+}
+
+In theory, the div in the example above should center on the page,
+but it doesn't. Why?
+
+In order to center an element, a width must be set for that element.
+Otherwise, the width of the div will be automatically set to the full
+width of its containing element, like the <body>, for example.
+It's not possible, therefore, to center an element that takes up the
+full width of the page.
+
+So, the way to do it is as follows:
+
+div.headline {
+  width: 400px;
+  margin: auto;
+}
+
+the browser often have default CSS rules that set default values for padding
+and margin. This affects how the browser displays HTML elements, which can
+make it difficult for a developer to design or style a web page.
+
+Many developers choose to reset these default values so that they can truly
+work with a clean slate.
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+DISPLAY property
+
+All HTML elements can be classified as one of the following: inline elements
+or block-level elements.
+
+Inline elements - elements that display inline with text, without disrupting
+the flow of the text (like links).
+Block-level elements - elements that use an entire line of space in a web
+page and disrupt the natural flow of text. Most of the common HTML elements
+are block-level elements (headings, paragraphs, divs, and more).
+
+In CSS, you can change the default behavior of elements with the display
+property. Why is this useful?
+
+Modifying the display property of an element can help achieve a desired
+layout for a web page. The display property can take on one of four values:
+
+inline - causes block-level elements (like a div) to behave like an inline
+element (like a link).
+block - causes inline elements (like a link) to behave like a block element
+(like a div).
+inline-block - causes block-level elements to behave like an inline element,
+but retain the features of a block-level element.
+none - removes an element from view. The rest of the web page will act as
+if the element does not exist.
+
+It's common to use the display property to create a navigation bar from
+list items, like so:
+
+<ul>
+  <li>Home</li>
+  <li>Products</li>
+  <li>Settings</li>
+  <li>Inbox</li>
+</ul>
+
+li {
+  display: inline;
+}
+
+In the example above, the block-level list items will now behave as inline
+elements. The result will be list items appearing on the same line, like a
+navigation bar.
+
+What's the difference between display: none and visibility: hidden? An
+element with display: none will be completely removed from the web page.
+An element with visibility: hidden, however, will not be visible on the web
+page, but the space reserved for it will.
