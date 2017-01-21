@@ -1,0 +1,40 @@
+09 - Box Borders Notes
+
+You can use the following properties:
+
+border-top-width
+border-right-width
+border-bottom-width
+border-left-width
+
+Each property affects the width of only one side of the border,
+giving you more flexibility in customization.
+
+The color of a border can also be customized with the border-color property.
+
+div.container {
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgb(22, 77, 100);
+}
+
+The border-color property accepts colors in the various formats you learned about earlier: named colors,
+RGB(a) colors, and hex colors. It's common to use hex colors for borders,
+but you'll likely also come across RGB(a) colors as well.
+
+The code in the example above can be shortened using the border property:
+
+div.container {
+  border: 3px solid rgb(22, 77, 100);
+}
+
+It's considered best practice to follow the width-style-color order when using the border property.
+
+The corners of an element's border box can be modified with the border-radius property.
+You can create a border that is a perfect circle by setting the radius equal to the
+height of the box, or to 100%
+
+div.container {
+  border: 3px solid rgb(22, 77, 100);
+  border-radius: 5px;
+}

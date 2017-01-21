@@ -50,6 +50,15 @@ p {
   margin: 60px auto;
   padding: 10px 0px 0px 0px;
   width: 90%;
+  /* cambios en bordes */
+  border-style: solid;
+  /* border-width: 2px  (cambia el ancho de los 4 bordes)*/
+  /* (top: 4 pixels, right: 2 pixels, bottom: 4 pixels, left: 2 pixels) */
+  /* border-width: 4px 2px 4px 2px; */
+  /* border-top-width: 5px; */
+  /* border-color: #af3432; */
+  border: 2px solid #fff; /* shorthand for last thre border properties */
+  border-radius: 10px;
 }
 
 .hotel-img {
@@ -77,6 +86,8 @@ a {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  /* set border separately */
+  border-radius: 0 0 8px 8px;
 }
 
 ul {
