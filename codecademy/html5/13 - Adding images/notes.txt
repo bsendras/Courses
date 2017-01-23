@@ -1,0 +1,181 @@
+Adding Images
+
+we can modify the dimensions of an image using the width and height properties.
+
+<img src="#" alt="" class="" />
+
+img.X {
+  width: 350px;
+  height: 200px; 
+}
+
+It's important to specify the width and height for an image on your web page, as
+this helps the browser know exactly how much space should be reserved for the image,
+rather than having to download an entire image for the user.
+Ideally, however, images should be saved at the dimensions that they will be displayed.
+For example, rather than specify a height and a width for an image using CSS, that....
+
+Centering
+
+Images can also be centered, but first, their default behavior must be changed. By default,
+images are inline elements. For images to center properly, they must behave as block-level elements.
+
+img.leaf {
+  width: 300px;
+  height: 200px; 
+  display: block;
+  margin: 0px auto;
+}
+
+In the example above, the image is aligned using the margin property. The top and bottom margins of
+the image's box are set to 0 margin. The left and right margins are set to auto, which automatically
+sets the exact amount of margin needed on the left and right sides in order to center the image.
+
+Note: To align images to the left or right side of a page, you can use the float property you learned
+about earlier.
+
+mages can also be added to the backgrounds of HTML elements with the background-image property.
+
+body {
+  background-image: url("https://www.example.com/leaf.jpg");
+}
+
+REPEAT
+
+You can control how a background image repeats with the background-repeat property. This property
+can take one of four values:
+
+repeat - the default value — the image will repeat horizontally and vertically.
+repeat-x - the background image will be repeated only along the x-axis (horizontally).
+repeat-y - the background image will be repeated only along the y-axis (vertically).
+no-repeat - the background image will not be repeated at all and will appear only once.
+
+p {
+  background-image: url("#");
+  background-repeat: repeat-x;
+}
+
+POSITION
+
+When a background image is not repeated, its position can be modified with the background-position
+property.
+
+p {
+  background-image: url("#");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+A background image is positioned using a 3 by 3 grid (three rows, three columns), meaning there are
+9 total possible positions for the image:
+
+left top - top left corner of the element's box.
+center top - top center of the element's box.
+right top - top right corner of the element's box.
+left center - left column, center row.
+center center - the center of the element's box.
+right center - right column, center row.
+left bottom - bottom left corner of the element's box.
+center bottom - bottom center of the element's box.
+right bottom - bottom right corner of the element's box.
+
+Note that the values are in pairs.
+
+Note: When setting this property, if only one value is specified, the second value will default to
+center.
+
+shorthand for set the image, repetition pattern and position:
+
+background property.
+
+p {
+  background: url("#") no-repeat right center;
+}
+
+NOTE:It's considered best practice to follow this order of values when setting the background property.
+
+BACKGROUND SIZE
+
+To modify a background image's size, you can use the background-size property.
+
+Values:
+
+cover - expands the image as large as possible to cover the full width or height of a container.
+If the dimensions of the container (say, a div) are larger than the dimensions of the image, the
+image will become distorted. This value is best for images that don't communicate important content 
+o the user, like background images.
+
+contain - expands the image as large as possible, but the image will be letterboxed, which means it
+won't cover the full width or height of a container.
+
+div.header {
+  height: 400px;
+  width: 100%;
+  background: url("#") no-repeat right center;
+  background-size: cover;
+}
+
+IMPORTANTE - Background fixed!!
+
+With the background-attachment property, you can specify whether or not a background image should
+remain at one position on the web page or whether it should move up and down as the user scrolls
+through a web page.
+
+The background-attachment property can take one of two values:
+
+scroll - this value allows the image to move up and down as a user scrolls on the web page (this is
+the default value).
+
+fixed - this value pins the image's position on the page.
+
+p {
+  background: url("#") no-repeat right center;
+  background-attachment: fixed;
+}
+
+In the example above, the background image will remained fixed as a user scrolls through the web page.
+
+GRADIENT
+
+A wide variety of different background styles are used across many modern websites today. Some sites
+use large images in their layout, while others use creative color gradients as their background.
+
+The background-image property you learned about earlier allows you to do more than simply set the
+background image of an element. It also lets you use color gradients in your web page.
+
+Gradients are planned to be a part of the newest revision of CSS, CSS3. Due to the many browsers
+available, there is no standard way of defining a gradient using CSS (different browsers require
+different syntax). In this exercise, we'll look at one value supported on a couple of major browsers.
+
+The background-image property can be set to the following value:
+
+-webkit-linear-gradient() - this value accepts two arguments: the two colors the linear gradient will
+transition to and from. The colors are usually specified as hex color codes.
+
+div.header {
+  height: 400px;
+  width: 400px;
+  background-image: -webkit-linear-gradient(#666CCC, #BC1324);
+}
+
+In a later course, you'll learn more about the -webkit-linear-gradient syntax, as well as other similar
+CSS values. For now, it's important to understand how to create a linear gradient using the value in the
+example above.
+
+
+Smmary:
+
+You've learned how to add images to a web page using the <img> element and the background property.
+What's the difference between these two methods? When should one method be used over another?
+
+The method used depends on the type of image.
+
+Some images are part of the content of a web page (icons, logos, album photos, etc.) and they communicate
+important information to a user. Other images are intended simply to style a web page (header backgrounds, 
+tc.), not to communicate important information.
+
+When an image communicates important information, you can use the <img> element and style the image using
+CSS, if needed.
+
+When an image is intended to style a web page, you can use the background property and further style it
+with CSS.

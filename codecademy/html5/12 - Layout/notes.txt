@@ -1,0 +1,217 @@
+The default position of an element can be changed by setting its position property.
+The position property can take one of four values:
+
+static - the default value (it does not need to be specified)
+relative - allows you to position an element relative to its default position the web page.
+absolute - The element will be pinned down to its current position (element still scrolling as the rest of the we page)
+fixed - fixes an element to a specific position on the page (regardless of user scrolling)
+
+RELATIVE:
+
+One way to modify the default position of an element is by setting its position property to
+relative.
+
+This value allows you to position an element relative to its default position the web page.
+
+div.description {
+  background-color: #1D09AF;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+Although the code in the example above instructs the browser to expect a relative positioning
+of the div, it does not specify exactly where the div should be positioned on the page.
+
+div.description {
+  background-color: #1D09AF;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 50px; 
+  left: 75px;
+}
+In the example above, the div has been positioned using two of the four offset properties.
+The valid offset properties are:
+
+top - moves the element down.
+bottom - moves the element up.
+left - moves the element right.
+right - moves the element left.
+
+In the example above, the div will be moved down 50 pixels and to the right 75 pixels.
+Units for offset properties can be specified pixels, ems, or percentages. Note that offset 
+properties will not work if the position of the element is not set to relative
+
+ABSOLUTE
+
+Another way of modifying the position of an element is by setting its position to absolute.
+
+When an element's position is set to absolute, all other elements on the page will ignore
+the element and act like it is not present on the page.
+
+div.description {
+  background-color: #1D09AF;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+Unlike the relative value, the code in the example is valid. The div will be pinned down to its
+current position. Unfortunately, if offset properties aren't specified, it's possible for the
+div's content to overlap with other content on the page, especially since other elements with
+ignore the div.
+
+Offset properties can be set in order to avoid this problem. The specific offset values will
+depend on what makes the best sense for the content of a web page.
+
+div.description {
+  background-color: #1D09AF;
+  width: 50px;
+  height: 50px;
+  position: absolute; 
+  left: 250px;
+}
+
+When an element's position is set to absolute, as in the last example, that element can
+still scroll out of view when a user scrolls
+
+FIXED 
+
+We can fix an element to a specific position on the page (regardless of user scrolling) by
+setting its position to fixed.
+
+div.navigation {
+  position: fixed;
+  height: 50px; 
+  width: 100%;
+}
+
+In the example above, the div will remain fixed to its position no matter where the user
+scrolls on the page. This technique is used often for navigation bars on a web page.
+
+It's still possible, however, for content (like text) to overlap other content when using
+this position. One solution is to set an opaque background color for the element.
+
+div.navigation {
+  position: fixed;
+  background-color: #4BF5FF;
+  height: 50px; 
+  width: 100%;
+}
+The opaque background color will prevent any other content on the page from overlapping
+with any content inside of the div.
+
+Z-INEDX 
+When boxes on a web page have a combination of different positions, the boxes (and therefore,
+their content) can overlap with each other, making the content difficult to read or consume.
+
+div.navigation {
+  background-color: #4BF5FF;
+  width: 100%;
+  height: 100px;
+  position: fixed; 
+}
+
+div.description {
+  background-color: #1D09AF;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 200px;
+}
+
+In the example above, the description div would ignore the navigation div and overlap it as a
+user scrolls. The opaque background color of the navigation div is not enough to prevent this from happening.
+
+The z-index property controls how far "back" or how far "forward" an element should appear on
+the web page.
+
+The z-index property accepts integer values. Depending on their values, the integers instruct
+the browser on the order in which elements should be displayed on the web page.
+
+div.navigation {
+  background-color: #4BF5FF;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  z-index: 1; 
+}
+
+div.description {
+  background-color: #1D09AF;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 200px;
+}
+
+In the example above, the z-index of the navigation div has been set to 1, which instructs the
+browser to move this div forward and stack it "on top" of the other elements when the user scrolls.
+
+It's not necessary to set the z-index of the description div to 0 or anything lower than 0.
+Setting the z-index of navigation to a number greater than 0 is sufficient to prevent overlapping
+content.
+
+FLOAT
+
+If you're simply interested in moving an element as far left or as far right as possible on
+the page, you can use the float property.
+
+The float property can be set to one of two values:
+
+left - this value will move, or float, elements as far left as possible.
+right - this value will move elements as far right as possible.
+
+div.block {
+  width: 100px;
+  float: left;
+}
+
+When an element is floated, any other content within the same containing element will naturally
+flow around the element.
+
+Floated elements must have a width specified, as in the example above. Otherwise, the element
+will assume the full width of its containing element, and attempting to float the element may
+not yield any visible results.
+
+CLEAR
+
+The float property can also be used to float multiple elements at once. When multiple floated
+elements have different heights, however, this can affect their layout on the page. Specifically,
+elements can "bump" into each other and not allow other elements to properly move the left or or
+the right.
+
+Setting the clear property of an element lets you specify how elements should behave when they
+bump into each other on the page.
+
+The clear property specifies how elements should behave when they bump into each other on the page.
+It can take on one of the following values:
+
+left - the left side of the element will not touch any other element within the same containing element.
+right - the right side of the element will nottouch any other element within the same containingelement.
+both - neither side of the element will touch any other element within the same containing element.
+none - the element can touch either side.
+
+div {
+  width: 200px;
+  float: left;
+}
+
+div.special {
+  clear: left;
+}
+
+In the example above, all divs on the page are floated to the left side. The div with class special
+did not move all the way to the left because a taller div blocked its positioning. By setting its
+clear property to left, the special div will be moved all the way to the left side of the page.
+
+REVIEW
+
+1 - The position property allows you to specify the position of an element in three different ways.
+2 - When set to relative, an element's position is relative to its default position on the page.
+3 - When set to absolute, an element's position can be pinned to any part of the web page, but the element will still move out of view the page is scrolled.
+4 - When set to fixed, an element's position can be pinned to any part of the web page. The element will remain in view no matter what.
+5 - The z-index of an element specifies how far back or how far forward an element appears should appear on the page.
+6 - The float property can move elements as far left or as far right as possible on a web page.
+7 - You can clear an element's left or right side (or both) using the clear property.
