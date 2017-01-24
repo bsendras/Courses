@@ -17,14 +17,17 @@
   <div class="search">Search the table</div>
   <!-- creo la tabla -->
   <table>
+    <thead>
     <tr>
       <th>Company Name</th>
       <th>Number of Items to Ship</th>
       <th>Next Action</th>  
     </tr>
+    </thead>
+    <tbody>
     <tr>
       <td>Adam's Greenworks</td>
-      <td>14</td>
+      <td colspan="2">14</td>
       <td>Package Items</td>
     </tr>
     <tr>
@@ -52,6 +55,68 @@
       <td>1</td>
       <td>Enter Order</td>
     </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td colspan="2">28</td>
+      </tr>
+    </tfoot>
   </table>
+
+<table>
+  <thead>
+  <tr> <!-- Row 1 -->
+    <th></th>
+    <th>Saturday</th>
+    <th>Sunday</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr> <!-- Row 2 -->
+    <th>Morning</th>
+    <td rowspan="2">Work</td>
+    <td rowspan="3">Relax</td>
+  </tr>
+  <tr> <!-- Row 3 -->
+    <th>Afternoon</th>
+  </tr>
+  <tr> <!-- Row 4 -->
+    <th>Evening</th>
+    <td>Dinner</td>
+  </tr>
+  </tbody>
+</table>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Quarter</th>
+      <th>Revenue</th>
+      <th>Costs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Q1</th>
+      <td>$10M</td>
+      <td>$7.5M</td>
+    </tr>
+    <tr>
+      <th>Q2</th>
+      <td>$12M</td>
+      <td>$5M</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Total</th>
+      <td>$22M</td>
+      <td>$12.5M</td>
+    </tr>
+  </tfoot>
+</table> 
+
 </body>
 </html>

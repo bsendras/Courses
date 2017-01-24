@@ -68,6 +68,7 @@ tr {
 th, td {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
+  font-size: 18;
   padding: 20px;
   text-align: left;
   width: 33.3333%;

@@ -21,3 +21,127 @@ table, td {
 }
 
 The code in the example above uses CSS instead of HTML to show table borders.
+
+What if the table contains data that spans multiple columns?
+
+For example, a personal calendar could have events that span across multiple hours,
+or even multiple days.
+
+Data can span columns using the colspan attribute. The attributes accepts an integer
+(greater than or equal to 1) to denote the number of columns it spans across.
+
+<table>
+  <tr>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+  </tr>
+  <tr>
+    <td colspan="2">Out of Town</td>
+    <td>Back in Town</td>
+  </tr>
+</table>
+
+In the example above, the data Out of Town spans the Monday and Tuesday table
+headings using the value 2 (two columns). The data Back in Town appear only under
+the Wednesday heading.
+
+
+Data can also span multiple rows using the rowspan attribute.
+
+The rowspan attribute is used for data that spans multiple rows (perhaps an event
+goes on for multiple hours on a certain day). It accepts an integer (greater than
+or equal to 1) to denote the number of rows it spans across.
+
+<table>
+  <tr> <!-- Row 1 -->
+    <th></th>
+    <th>Saturday</th>
+    <th>Sunday</th>
+  </tr>
+  <tr> <!-- Row 2 -->
+    <th>Morning</th>
+    <td rowspan="2">Work</td>
+    <td rowspan="3">Relax</td>
+  </tr>
+  <tr> <!-- Row 3 -->
+    <th>Afternoon</th>
+  </tr>
+  <tr> <!-- Row 4 -->
+    <th>Evening</th>
+    <td>Dinner</td>
+  </tr>
+</table>
+In the example above, there are four rows:
+
+The first row contains an empty cell and the two column headings.
+The second row contains the Morning row heading, along with Work, which spans two
+rows under the Saturday column. The "Relax" entry spans three rows under the Sunday
+column.
+The third row only contains the Afternoon row heading.
+The fourth row only contains the Dinner entry, since "Relax" spans into the cell
+next to it.
+If you'd like to see how the browser interprets the code above, feel free to copy
+and paste it into the code editor to understand it a little better.
+
+Over time, a table can grow to contain a lot of data and become very long. When this
+happens, the table can be sectioned off so that it is easier to manage.
+
+Long tables can be sectioned off using the table body element: <tbody>.
+
+When a table's body is sectioned off, however, it also makes sense to
+section off the table's headings using the <thead> element.
+
+The bottom part of a long table can also be sectioned off using the <tfoot> element.
+
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Morning</th>
+      <td rowspan="2">Work</td>
+      <td rowspan="3">Relax</td>
+    </tr>
+    <tr>
+     <th>Afternoon</th>
+    </tr>
+    <tr>
+      <th>Evening</th>
+      <td>Dinner</td>
+    </tr>
+  </tbody>
+</table>
+
+Tables, by default, are very bland. They have no borders, the font color is black,
+and the typeface is the same type used for other HTML elements.
+
+You can use CSS to style tables just like you have done in the past. Specifically,
+you can change style the various aspects mentioned above.
+
+table, th, td {
+  border: 1px solid black;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+Summary:
+
+1 - The <table> element creates a table.
+2 - The <tr> element adds rows to a table.
+3 - To add data to a row, you can use the <td> element.
+4 - Table headings clarify the meaning of data. Headings are added with the <th> element.
+5 - Table data can span columns using the colspan attribute.,
+6 - Table data can span rows using the rowspan attribute.
+7 - Tables can be split into three main sections: a head, a body, and a footer.
+8 - A table's head is created with the <thead> element.
+9 - A table's body is created with the <tbody> element.
+10 - A table's footer is created with the <tfoot> element.
+11 - All the CSS properties you learned about in this course can be applied to tables
+and their data.
