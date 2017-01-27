@@ -1,0 +1,60 @@
+/* Tamaños de fuente relativos */
+
+html {
+/* por convencion usamos este como tamaño de fuente
+   estandar para todos los navergadore */
+  font-size: 16px;
+}
+
+/*Ahora aplicamos un estilo distinto al elemento body */
+body {
+  color: #352a25;
+  font-family: Georgia, serif;
+  /* tamaño de fuente relativo */
+  /*
+    En este punto el tamaño de fuente del documento es
+    de 16px, por lo tanto 1em = 16px
+  */
+  
+  /* Pero 16px es un tamaño algo grosero para usar como divisor, por lo que lo cambiamos a 10px */
+  font-family: 62.5% /* 10px (el 62.5% de 16px)*/
+  /* Ahora todos los elementos del body heredan un
+     font-size de 62.5% o 10px que es un valor mas
+     amigable. Esto significa ahora 1em = 10px es 
+     nuestro nuevo tamaño estandar.
+     
+     Pero todavia necesitamos una forma 
+     general de calcular esta relación.
+  */
+    
+    /* vamos a usar esta formula */
+    /* target/context=result(ems); */
+    /* donde
+    target: Desired font size
+    context: fontsize of the containing element
+    result: Desired font size in ems;
+    */
+}
+
+/* aplicamos un estilo a la fuente del h1 */
+h1 {  
+  font-size: 30px;
+  /*
+  cambiamos los 30px al valor correspondiente en ems.
+  30px/10px=3ems
+  */
+  font-size: 3ems;
+  font-weight: bold;
+}
+
+h1 a {
+  font-size: 14px; /* necesitamos convertirlo a un tamaño relativo */
+  /* volvemos a aplicar la formula */
+  /* target/context=result(ems) */
+  /* 14px/30px= 0.4666666666666667 */
+  /* debemos dejarlo asi ya que es el valor exacto que se busca */
+  font-size: 0.4666666666666667;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #6C564b;
+}
