@@ -17,7 +17,7 @@ body {
   */
   
   /* Pero 16px es un tamaño algo grosero para usar como divisor, por lo que lo cambiamos a 10px */
-  font-family: 62.5% /* 10px (el 62.5% de 16px)*/
+  font-size: 62.5% /* 10px (el 62.5% de 16px)*/
   /* Ahora todos los elementos del body heredan un
      font-size de 62.5% o 10px que es un valor mas
      amigable. Esto significa ahora 1em = 10px es 
