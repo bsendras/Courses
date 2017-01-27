@@ -1,0 +1,30 @@
+/* agregamos algo de css para dar estilo */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  background-image: url("bk-jumbotron.jpg");
+  background-size: cover;
+  height: 500px;
+  color: #fff;
+  text-shadow: 0.25px 0.25px 0.25px #000000;
+}
+
+h2 {
+  font-size: 60px;
+  font-weight: 700;
+  margin: 0 10px 20px;
+}
+
+h3 {
+  margin: 0 10px 20px;  
+}
+
+/* elemento con la clase btn "y" la clase btn primary */
+.btn.btn-primary {
+  text-shadow: none;
+}
+

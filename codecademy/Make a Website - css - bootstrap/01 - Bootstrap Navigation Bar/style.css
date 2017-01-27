@@ -1,0 +1,29 @@
+/* algo de css es necesario para dar estilo estetico */
+body {
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+header {
+  background-color: #40A550;
+}
+
+.row {
+  display: flex;
+  align-items: center; /* alinea verticalmente en  el row */
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+h1 {
+  font-weight: 700;
+  margin: 0;
+}
+
+p {
+  padding: 0 20px;
+  margin: 0;
+}

@@ -1,0 +1,29 @@
+/*
+* {
+  border: 1px solid #000;
+}
+*/
+
+footer {
+  font-size: 13px;
+  padding: 20px 0;
+}
+
+footer .row {
+  display: flex;
+  align-items: center; /* alineo el copy verticalmente al centro con los iconos */
+}
+
+footer .col-sm-8 {
+  display: flex;
+  justify-content: flex-end; /* flex-start , o center */ /* alineo la lista de iconos horzontalmente al inicio, centro o derecha. */
+}
+
+ul {
+  list-style: none;
+}
+
+li img {
+  width: 32px;
+  height: 32px;
+}

@@ -1,0 +1,21 @@
+/* Agregamos algo de estilo */
+
+.col-sm-4{
+  text-align: center;
+  padding: 25px;
+  
+}
+
+.wash {
+  background-image: url("wash.jpg");
+}
+
+.srv-img {  
+  background-size: cover;
+  border-radius: 100%;
+  border: 5px solid #B94B51;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 30px auto;
+}
+
