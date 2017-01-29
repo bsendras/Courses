@@ -1,0 +1,24 @@
+
+html {
+ /* bootstrap es 14px para la fuente por default. */
+ /* lo paso a 10px en porcentual y logramos que */
+ /* 1em = 10px */ 
+  font-size: 62.5%; /* 10px */
+}
+body {
+ /* es necesario heredar la fuente del html porque*/
+ /* sino bootstrap lo modifica a 14 px */   
+ font-size: inherit; /* 10px = 1em */
+}
+
+.column {
+  background-color: rgb(230,226,235);
+  border: 1px solid rgb(201,193,213);
+}
+
+p {
+  border: 1px solid black;
+  text-align: center;
+  margin: 20px;
+} 
+

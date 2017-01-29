@@ -1,0 +1,31 @@
+
+html {
+ /* bootstrap es 14px para la fuente por default. */
+ /* lo paso a 10px en porcentual y logramos que */
+ /* 1em = 10px */ 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 62.5%; /* 10px */
+}
+body {
+ /* es necesario heredar la fuente del html porque*/
+ /* sino bootstrap lo modifica a 14 px */   
+ font-size: inherit; /* 10px = 1em */
+}
+
+.nav {  
+  background-color: #373737;
+}
+
+.nav li a {
+  color: #fff;
+  font-size: 1.5em;
+  height: 40px;
+  padding-top: 11px !important;
+}
+
+.nav li a:hover {
+  background-color: rgba(255,255,255,0.1) !important;
+  color: #fff;
+}
+
