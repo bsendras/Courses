@@ -1,0 +1,41 @@
+Para permitir que los usuarios puedan descubrir nuevos productos estos deben poder navegarlos a traves
+de un arbol o jerarquia de categoryas.
+
+--------------------------------------------------------------
+EJEMPLO DE ARBOL DE CATEGORiAS:
+--------------------------------------------------------------
+
+                     IPhone
+                    /
+              Phone
+             /      \
+            /        Android
+Electronics
+            \                    MacBook Pro
+             \                  /
+              \           Apple
+               \         /
+                Computer 
+                         \     Dell 
+                          \   /
+                           PC
+                              \
+                               HP
+
+--------------------------------------------------------------
+
+Por ejemplo el usuario debe poder consultar una lista de productos bajo una determinada categoria, digamos "Phone",
+y obtendra resultados tanto de telefonos que corren ios como telefonos que corren android. De esta forma el usuario sera
+capaz de bajar de nivel en el arbol y consultar solo telefonos con ios, o por el contrario, productos de la categoria mas general "electronics".
+
+Con esto en mente debemos diseñar un esquema que nos permita contestar eficientemente a preguntas como
+"que productos hay en la categoria electronics?" o De que categorias es Ipone una subcategoria. Todo esto Parapermitr a los usuarios navegar el arbol.
+
+Por ejemplo, si estuvieramos viendo la subcategoria "dell" pero queremos ver otras marcas deberiamos poder seleccionar la categoria "computer",
+ver que subcategorias tiene, y buscar en ellas.
+
+La forma mas eficiente de hacer esto es almacenando un array con todas las categorias ancestros (de nivel superior) en cada documento que represente
+una categoria del arbol.
+
+ej: 
+ Ancestros de "Iphone", son "Electronics" y Phone

@@ -1,0 +1,99 @@
+2) PRINCIPIO DE MENOR CARDINALIDAD.
+Este principio provee una gui de como tratar las relaciones 1 -> muchos y muchos -> muchos con mongo DB.
+
+Partiendo del ejemplo anterior ligueramente modificado:
+
+    Users:
+    -----
+    {
+      username: 'val'
+      reviews[]
+    }
+
+    Reviews:
+    ------
+    {
+      score: 6,
+      author: 'val'
+    }
+    {
+      score: 10,
+      author: 'val'
+    }
+
+Nada evita que modelemos y registremos cada review en un array dentro del documento usuario, dependiendo del caso puede ser un buena idea.
+Pero cuidado! Los arrays que crecen sin limite (no mucho.. sino "sin limite") son una mala practica y contrario a los patrones de diseño de mongo db.
+Si no limitaramos la cantidad de reviews que puede hacer un usuario el tamaño del documento se vuelve masivo y esto es malo para la performance del motor.
+Tmbien es malo debido al limite de 16MBytes por documento y es malo porque desperdicia ancho de banda en las operaciones sobre una red. En desarroyo web
+es necesario prestar atencion a datos innecesarios viajando por la red.
+
+El esquema ideal en este caso seria guardar en una de las colecciones un array de referencias a los documentos de la otra coleccion, siempre que esto genere el array mas pequeño posible
+(o la menor cardinalidad). Las opciones son:
+
+    Users:
+    -----
+    {
+      username: 'val'
+      reviews[]
+    }
+
+En este caso si un usuario puede postear todos los reviews que quiera, el array review puede crecer indefinidamente. (relacion 1 -> infinito)
+Ahora, si inverimos la situación
+    Reviews:
+    ------
+    {
+      score: 6,
+      author: 'val'
+    }
+
+Almacenando una referencia al usuario en cada review, genera una relacion 1 -> uno, lo cual tiene una cardinalidad meno.
+Si fuese un review colaborativo generado por hasta 10 usuarios o unos cientos de usuarios, tampoco habria problema. Modelariamos
+de esta forma
+
+    Reviews:
+    ------
+    {
+      score: 6,
+      authors: []
+    }
+Siendo athors un vector de referencias a los usuarios, que aunque sean cientos, generan una relacion 1 -> muchos (muchos con limite) que es sustancialmente
+de menor cardinalidad que 1 -> infinito. por lo tanto este seria el esquema valido.
+
+Este principio tambien puede aplicarse a las relaciones muchos -> muchos
+
+Users:
+{
+  name: 'john'
+}
+{
+  name: 'jack'
+}
+
+Events:
+{
+  name: 'meetup1',
+  attendees: []
+}
+{
+  name: 'meetup1',
+  attendees: []
+}
+
+En sql seria sencillo y nos valdriamos de una tabla relacion en donde relacionariamos a muchos usuarios con 1 evento y 1 usuario con muchos eventos
+resultando en una relacion muchos a muchos.
+
+En mongo db no es tan simple. Si no tuvieramos control sobre la cantidad de usuarios (millones) que pueden asistir a un evento y esperamos que cada usuario pueda
+asistir a numerosos eventos, entonces una coleccion relacion para mapear la relacion seria la eleccion correcta.
+Sin embargo, si asumimos que la cantidad de usuarios asistiendo a un evento sera de a lo sumo unos cientos, entonces la solucion ideal seria 
+modelar (desnormalizar) una relacion uno a muchos entre evento y usuario, del tipo "un evento tiene muchos usuarios", en la cual el array de usuarios no crecera
+mas aya de los cientos.
+
+{
+  name: 'meetup1',
+  attendees: [ (algunos cientos) ]
+}
+
+Algunos cientos, dependera del caso, no podemos poner un numero fijo debido a que el esquema correcto en mongo DB siempre depende del principio
+"Store what you query for".
+
+

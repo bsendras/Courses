@@ -1,0 +1,22 @@
+VIRTUALS:
+-----------------
+
+Las VIRTUALS son propiedades que a menudo son computadas a partir de otras propiedades.
+No se persisten en la base de datos, pero pueden ser accedidas igual que las demas propiedades.
+Esto es una caracteristica propia de mongoose.
+
+Ejemplo de un objeto compuesto de propiedades regulares y virtuales:
+-----------------------------
+          Managed by MongoDB
+
+{
+  _id
+  firstname
+  lastname
+-----------------------------
+          Managed by Mongoose
+  fullname
+}
+-----------------------------
+
+Para declarar una propiedad virtual, se agrega una funcion Virtual al esquema. Ver Product.js

@@ -1,0 +1,23 @@
+// Ahora que ya tenemos Mongo y nodeJS instalados, necesitamos poder comunicarnos
+// con la base de datos desde nuestra aplicacion, escribiendo algun codigo en node.js
+// El paquete NPM "Mongodb" es el driver ofical de mongoDB para node.js
+// El driver permite escribir cierto codigo NODE.js para hablarle al motor MongoD
+
+// En este curso se usa principalmente Mongoose para interfacear con el driver MongoDB.
+// Mongoose is an ODM (Object document mapper) que ofrece funcionalidad adicional como validacion de esquemas,
+// como una capa superior al driver MongoDB de node.js.
+
+// Primero vamos a probar usando el driver directamente y luego probamos usando moongoose.
+
+1) INSTALAR MONGODB DRIVER
+--------------------------
+
+// agregar la dependencia al packaje.json
+{
+    "dependencies" {
+        "mongodb": "2.2.27"
+    }
+}
+
+// ejecutar la instalacion con npm en la terminal
+> npm install

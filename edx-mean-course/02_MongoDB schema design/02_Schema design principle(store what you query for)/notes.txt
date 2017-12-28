@@ -1,0 +1,83 @@
+MongoDB es Schemaless esto significa que nos permite almacenar cualquier tipo y
+formato de documento en sus colecciones. Esto no significa que debamos hacerlo
+de este manera.
+
+Con el objetivo de conseguir buena performance en el uso de motor y productividad
+en el desarrollo debemos pensar cuidadosamente el diseño de nuestro esquema de datos.
+
+
+PRINCIPIOS DE MODELADO DE DATOS EN MONGO DB (SCHEMA DESIGN PRINCIPLES):
+----------------------------------------------------------------------
+
+1) El primer principio es consecuencia de las siguientes 3 caracteristicas de mongodb:
+
+  Pros:
+    1) Fast in-place updates: Mongo db puede actualizar documentos "in-place" muy rapidamente
+       siempre y cuando el tamaño del documento no varie demasiado.
+    2) Fast queries: Mongo DB esta optimizado para queries rapidos sobre documentos individuales.
+
+  Cons:
+    1) No Joins: En Mongo DB no existe el concepto de Join. No hay manera CONFIABLE de
+       realizar juntas de datos de diferentes colecciones como hariamos en SQL.
+
+Por ejemplo:
+Supongamos que se tienen una coleccion de usuarios y una coleccion de reviews(calificaciones que realiza el usuario)
+    Users:
+    -----
+    {
+      username: 'val'
+    }
+
+    Reviews:
+    ------
+    {
+      score: 6,
+      author: 'val'
+    }
+    {
+      score: 10,
+      author: 'val'
+    }
+
+    Para poder obtener un usuario y los reviews realizados por este, tendremos que hacerlo
+    dos consultas, una para obtener el usuario, y otra para obtener los reviews. No hay forma de hacer esto en
+    Mongo DB, amenos que se cambie el esquema de datos. Es mas, no hay forma de consultar los usuarios ordenados
+    por el promedio de puntaje en sus reviews con este esquema. Para lograrlo deberiamos pre-calcular el promedio de cada usuario
+    y almacenarlo en el documento correspondiente a cada usuario.
+
+    Para aprovechar las ventajas de mongo DB nuestro esquema de datos deberia coincidir estrechamente
+    con la informacion que queremos mostrar al usuario final. Por ejemplo, como dijimos antes, si quisieramos mostrar
+    el puntaje promedio otorgado por cada usuario, deberiamos registrar el promedio en cada documento de la coleccion usuario,
+    en lugar de recalcularlo en cada consulta.
+
+    Users:
+    -----
+    {
+      username: 'val'
+      averagescore: 8;
+    }
+
+    Reviews:
+    ------
+    {
+      score: 6,
+      author: 'val'
+    }
+    {
+      score: 10,
+      author: 'val'
+    }
+
+Este principio podemos enunciarlo como:
+
+1) STORE WHAT YOU QUERY FOR.
+Almacena lo que vayas a consultar! Que preguntas vamos a hacerle al modelo?
+La forma de almacenar informacion deberia reflejar la forma en que es usada en la aplicacion.
+
+Almacenar exactamente lo que vamos a consultar es mas facil de entender y debuguear
+porque hay menos transformacion de datos entre el cliente y la base de datos. Hay tambien mejor performance
+porque leer un solo documento de mongo db requiere menos lecturas de disco en contraposicion a ejecutar
+un query de sql con multiples joins.
+
+En conclusion, cuando escribamos nuestra API rest, cada endpoint sera principalmente responsable de
+cargar informacion de una unica collección.

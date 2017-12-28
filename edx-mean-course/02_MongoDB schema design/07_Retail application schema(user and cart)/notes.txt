@@ -1,0 +1,3 @@
+El esquema "user" define que informacion guardaremos sobre los usuarios.
+Guardaremos: nombre de usuario, su foto, informacion de autenticacion en facebook(oauth) y una lista de productos
+agregados a su carrito.

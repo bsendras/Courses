@@ -1,0 +1,10 @@
+Quedan 3 puntos  a tratar:
+- User Login with facebook
+- Add a product to cart
+- Checkout (with a payment method)
+
+Se utilizará un nuevo package llamado "body-parser" (hay que incluilo alas dependencias en el packaje.json). Este paquete
+puede parsear el body de un http request. La mayoria de las Apis construidas con express querrán incluir este package,
+porque las http request post and put contienen los datos mas importantes en el body.
+
+El archivo index.js es identico a los de las apis category y product.

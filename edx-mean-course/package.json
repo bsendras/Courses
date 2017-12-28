@@ -1,0 +1,27 @@
+{
+    "//": [ "npm busca automaticamente en node_modules/.bin por el ejecutable de mocha. ",
+    "por eso no hay que especificarlo."],
+
+    "scripts": {
+        "test": "mocha test.js", 
+        "test-kitten": "mocha -R nyan test.js"
+    },
+
+    "//": [ "ESTO ES UN COMENTARIO",
+    "PACKAGE.JSON",
+    "Este archivo describe la metadata de la aplicacion como:",
+    "nombre",
+    "version",
+    "author",
+    "paquetes npm de los que depende",
+    "Es una forma de declarar de que paquetes npm depende la aplicacion.",
+    "underscore is a popular set of functional programming-inspired utility functions for JavaScript."],
+
+    "dependencies": {
+        "underscore": "1.5.2",
+        "mongodb": "2.2.27",
+        "mocha": "3.4.2",
+        "mongoose": "^4.10.2"
+    }
+
+}

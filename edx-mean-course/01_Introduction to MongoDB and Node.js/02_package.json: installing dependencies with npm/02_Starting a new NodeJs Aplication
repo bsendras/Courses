@@ -1,0 +1,58 @@
+1) PACKAGE.JSON
+---------------------------
+// Cuando comoenzamos a desarrollar una aplicacion en Node.js lo primero que tenemos que hacer
+// es crear el archivo package.json
+// Este archivo describe la metadata de la aplicacion como:
+//      nombre,
+//      version,
+//      author,
+//      paquetes npm de los que depende.
+// Es una forma de declarar de que paquetes npm depende la aplicacion.
+
+// Creamos el archivo en el raiz de nuestro proyecto.
+> touch package.json
+
+2) DECLARAR DEPENDENCIAS
+---------------------------
+// Declaramos las dependencias en el archivo package.json
+
+{
+    "dependencies" {
+        "underscore" : "1.5.2"
+    }
+}
+
+3) INSTALAR DEPENDENCIAS
+---------------------------
+// En la terminal nos movemos al directorio del proyecto y ejeutamos:
+> npm install
+
+// las dependencias declaradas se instalan en la carpeta node_modules.
+// en este caso instalamos el paquete "underscore"
+
+// Cada proyecto tiene su propio directorio de instalacion de paquetes node_modules
+// Por default, proyectos distintos no comparten un directorio node_modules de instalacion de paquetes,
+// por lo tanto cada proyecto tendra sus propias copias de las dependencias que requiere, en las versiones que requiera.
+// es recomendable siempre instalar la ultima version de cada dependencia.
+
+// Existen debates en la comunidad a cerca de si git debe trackear la carpeta node_modules o no.
+// Usualmente la mejor eleccion es agregar la carpeta  node_modules al archivo .gitignore
+// debido a que algunos modulos de node.js usan add-ons escritas en C++ que se compilan al momento de correr el comando "npm install".
+// Si hicieramos commit de esos add-ons podriamos estar trackeando binarios compilados para un Sistemaoperativo especifico.
+
+4) CREAR APLICACION
+---------------------------
+// En la raiz del proyecto creamos el archivo index.js
+
+
+5) INCLUIR DEPENDENCIAS
+---------------------------
+// creamos una variable y con la funcion "built-in" (nativa de nod.js) "require" obtenemos la referencia a la dependencia que queremos incluir.
+var underscore = require('underscore');
+
+
+
+
+
+
+

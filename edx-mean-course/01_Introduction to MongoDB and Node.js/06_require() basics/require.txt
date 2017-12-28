@@ -1,0 +1,2 @@
+// la funcion require es un mecanismo de node.js para separar proyectos largos, en pequeños achivos y hacerlo mas manejable.
+// require permite incluir en un archivo de codigo node.js modulos externos u otros archivos.

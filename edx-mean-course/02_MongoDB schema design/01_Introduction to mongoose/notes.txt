@@ -1,0 +1,11 @@
+SCHEMA: Es un conjunto de reglas que defineneque campos puede tener un documento,
+y que propiedades debe satisfacer ese documento para ser considerado valido.
+
+CONNECTION: es un objeto que representa uno o mas sockets conectados al mongodb server.
+
+MODEL: en general un modelo es una combinacion de un SCHEMA y un CONNECTION. Un modelo es un wrapper (una envoltura) vinculado
+a una sola colección de mongodb, que usa su objeto SCHEMA asociado para asegurarse de que los decumentos insertados
+en la coleccion cumplan con las restricciones de dicho esquema.
+
+DOCUMENT: Un objeto DOCUMENT o documento de mongodb, podemos pensarlo como una instancia particular de un MODEL o modelo.
+Un documento es un objeto o elemento en particular de una coleccion. Tiene asociado un MODEL y una funcio ".save" para persistir los cambios en la db.

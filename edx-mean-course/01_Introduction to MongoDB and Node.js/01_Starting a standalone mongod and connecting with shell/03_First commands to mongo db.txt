@@ -1,0 +1,10 @@
+$ mongo
+>
+> show dbs  // muestra las bases de datos existentes
+> show collections // muestra las colecciones de la base de datos actual
+> db    // variable con la referencia a la base de datos actual. si ejecuto db como un comando devuelve muestra el nombre de la db actual.
+
+// La base de datos default se llama "test" asique esto esta creando una colleccion llamada tambien "test" e insertando en ella un documento.
+>db.test.insert({ helo : "world"}); // inserta un elemento en la colleccion test de la db actual.
+
+>db.test.findOne(); encuentra y muestra un documento de la colleccion "test" de la db actual("test" en este caso) y lo devuelve.

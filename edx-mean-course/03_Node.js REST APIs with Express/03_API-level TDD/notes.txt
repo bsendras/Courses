@@ -1,0 +1,5 @@
+En este capitulo vamos a ver como escribir tests que interactuen con nuestra API rest de
+la misma forma que lo haria el cliente AngularJS mas adelante.
+
+Gracias a la naturaleza asincronica de las llamadas en node.js podemos usar la funcion que exporta ./server.js
+para iniciar un http server en el codigo de los test de mocha, y hacer http requests contra un server "vivo".

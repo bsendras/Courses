@@ -1,0 +1,7 @@
+La funcion .bind es una poderosa herramienta de javascript para reusar codigo.
+handleOne.bind retorna una funcion.
+
+Como consecuencia del uso de .bind, la funcion handleOne ahora puede definir reglas genericas
+para manejar los resultados de las llamadas a [model].findOne().
+
+FALTA ESCRIBIR LOS TESTS en test.js

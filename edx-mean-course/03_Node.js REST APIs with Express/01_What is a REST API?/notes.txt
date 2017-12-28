@@ -1,0 +1,45 @@
+En general, podemos decir que un API REST es una interfaz que permite a una aplicacion cliente que se
+ejecuta en una pc, o cliente javascript corriendo, por ejemplo, en chrome, leer datos y guardar datos
+en nuestro servidor.
+
+REST (Representational State Transfer) es un paradigma para que un browser se comunique sobre HTTP,
+Mediante operaciones como HPPT Request y Response. Los navegadores modernos permiten a Javascript enviar mensajes HTTP.
+
+En este curso, podemos pensar las operaciones http como una conbinacion de 3 cosas:
+
+{Verbo} {Resource} {body}
+
+ej:
+GET     /home      (some JSON data)
+
+Verbo: define el tipo de operacion(GET, PUT, POST, DELETE)
+
+Resourece: es analogo a un filepath.
+
+Body: datos en JSON que quiero pasar como parametro.
+
+Response status: Nos dice si la peticion fue exitosa o falló.
+
+Es decir que el paradigma rest usa http para manejar el estado mediante operaciones CRUD (create, read, update, delete)
+
+Por ejemplo la siguiente peticion, solicita la creadcion de un nuevo usuario:
+- POST /user 
+y la respuesta del servidor es :
+- { "id": "42" }
+
+Ahora consultamos datos de ese usuario.
+- GET /user/42
+Respuesta, datos del usuario creado en el paso anterior:
+- { "name": "val" }
+
+HTTP <-> CRUD
+----------------
+POST ---> create
+GET ---> read
+PUT ---> update
+DELETE ---> delete
+
+las construcciones como "GET /user" y "POST /user/:id" son comunmente conocidas como "routes" o "endpoints"
+
+Nuestro obetivo es montar sobe los esquemas creados con mongoose un api rest. Esta expondra los endpoints necesarios para que nuesta
+aplicacion cliente en javascript pueda crear y cargar datos sobre usuarios productos y categorias.

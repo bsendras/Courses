@@ -1,0 +1,27 @@
+Los indices son una forma de mantener consistente la performance de nuestros querys a medida que el volumen de datos de nuestra base crece.
+En mongo DV los indices son clave para obtener buena performance.
+
+Los indices son esencialmente una forma de que mongodb pueda pre-computar el resultado de un query, de la misma forma que el indice de un
+libro puede decirnos en que pagina encontrar cierto capitulo, sin la necesidad de buescar a traves del libro entero.
+
+Los indices mono clave o monocampo, aceleran consultas que necesitan hacer un scan de la coleccion para encontrar un documento.
+
+// crear un indice desde el mongo shell
+db.<Coollection name>.createIndex({<field name>: 1 });
+
+ej:
+
+db.names.createIndex({name: 1});
+
+Los indices multiclave o multicampo aceleran consultas que necesitan escanear arrays dentro de los documentos.
+Durante el escaneo completo de una coleccion, se tendra que escanear por completo cada array de cada documento.
+Debido a esto la creacion de un indice multicampo es transparente. Todo lo que tenemos que hacer es crear un indice sobre
+el campo que es un array.
+
+ej:
+si mis documentos tienen este esquema
+{
+    names: ['nombre_0, nombre_1,...,nombre_N']
+}
+
+db.names.createIndex({names: 1});

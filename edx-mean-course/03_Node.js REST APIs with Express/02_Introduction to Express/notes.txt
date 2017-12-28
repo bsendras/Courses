@@ -1,0 +1,18 @@
+Hasta ahora solo usamos Node.js para escribr y hacer consultas a mongodb.
+Ahora vamos a comenzar los primeros pasos para construir el API Rest y aprender como iniciar un servidor HTTP en node.js.
+
+Vamos a usar un paquete npm llamado "Express" para iniciar el servidor http. Express es el web server y web application framework
+mas popular para node.js.
+
+Ahora, node.js tiene su propio http parser y podriamos escribir el server http en node.js plano si unsar ningun package externo.
+Sin embargo, express provee "routing" (manejo de endpoints) y otras abstracciones de alto nivel que son indispensables para el
+desarrollo web moderno.
+
+Routing significa decirle a Express que codigo debe ejecutar para cada tipo de HTTP request.
+
+Por ejemplo, podriamos querer agregar un endpoint handler para cuando alguien realice un GET request
+a nuestra pagina de inicio y otro enpoint handler diferente para cuando alguien relice un POST request al crear un usuario nuevo.
+un express route/endpoint handler es una funcion que toma dos parametros. Uno es un objecto request (req) que contiene info sobre la
+peticion entrante) y un objeto response (res) que qcontiene utilidades para armar la respuesta.
+
+en esta primera etapa escribimos todo en archivs separados con propositos de facilitar el testing.

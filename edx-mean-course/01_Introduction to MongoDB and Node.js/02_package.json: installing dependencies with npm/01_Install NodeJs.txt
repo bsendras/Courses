@@ -1,0 +1,11 @@
+1) DESCARGAR
+---------------------------
+// Ir al sitio y descargar el instalador para el sistema correspondiente. Segir las instrucciones.
+// El instalador de Node js trae incluido el administrador de paquetes npm.
+
+https://nodejs.org/en/download/
+
+2) verificar la instalacion
+---------------------------
+node -v
+npm -v

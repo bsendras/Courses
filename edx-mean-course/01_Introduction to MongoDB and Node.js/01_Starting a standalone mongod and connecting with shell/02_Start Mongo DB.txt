@@ -1,0 +1,13 @@
+En la terminal:
+
+1) INICIAR MONGO DB
+// Mongo db puede iniciarse como un servicio de linux o como un "non-windows Operative System".
+// Para propositos del curso es util iniciarlo y detenerlo desde la terminal para cada caso y poder ver los logs.
+// Para esto debe iniciarse indicando el dbpath, directorio donde se ubicara la base de datos.
+// Este directorio debe existir previamente.
+
+// Asumiendo que existe indicamos el directorio /data/db dentro del raiz de nuestro proyecto
+cd mongod --dbpath ~/Projects/Courses/edx-mean-course/data/db
+
+// o simplemete para crearlo en el directorio de usuario.
+cd mongod --dbpath ~/data/db

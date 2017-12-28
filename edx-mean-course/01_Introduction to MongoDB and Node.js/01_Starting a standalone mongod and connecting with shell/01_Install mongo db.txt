@@ -1,0 +1,51 @@
+Isnstalar MongoDB descargando el paquete de la web oficial.
+
+En la terminal:
+
+1) DESCARGAR
+---------------------------------------------------------------------------------
+// Moverse a la carpera descargas.
+> cd ~/Downloads
+
+// descargar el paquete.
+> wget https://fastdl.mongodb.org/osx/mongodb-osx-x86_64-3.4.4.tgz
+
+2) EXTRAER
+---------------------------------------------------------------------------------
+
+// descomprimir el paquete.
+>tar -zxvf mongodb-osx-x86_64-3.4.4.tgz
+
+// en este curso se usan solo los ejecutables:
+./mongodb-osx-x86_64-3.4.4/bin/mongod (Motor de bas de datos)
+./mongodb-osx-x86_64-3.4.4/bin/mongo (Shell)
+
+3) COPIAR ARCHIVOS AL DIRECTORIO DE INSTALACION DESEADO
+---------------------------------------------------------------------------------
+// Nos movemos por ejemplo a  "/usr/local"
+> cd /usr/local
+// Copiamos todo a una ubicacion en el sistema por ejemplo:
+> sudo cp -r ./mongodb-osx-x86_64-3.4.4 /usr/local/mongodb-osx-x86_64-3.4.4
+
+
+4) CREAR LINKS
+---------------------------------------------------------------------------------
+
+// Ahora consultamos el path del sistema y tomamos algun directorio existente.
+> echo  $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+// Tomamos por ejemplo "/usr/local/bin" y ceramos un SymLink a mongod y mongo.
+
+> sudo ln -s /usr/local/mongodb-osx-x86_64-3.4.4/mongod /usr/local/bin/mongod
+> sudo ln -s /usr/local/mongodb-osx-x86_64-3.4.4/mongo /usr/local/bin/mongo
+
+5) VERIFICAR ACCESO A EJECUTABLES
+---------------------------------------------------------------------------------
+// Ahora podemos verificar que los ejecutables son accesibles desde todo el sistema.
+// Nos movemos al directorio home del usuario.
+> cd ~
+
+// Probamos los ejecutables para conocer su version, de este modo vemos que son accesibles.
+> mongod --version
+> mongo --version

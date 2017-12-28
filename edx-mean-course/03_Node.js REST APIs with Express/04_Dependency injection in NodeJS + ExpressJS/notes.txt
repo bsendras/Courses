@@ -1,0 +1,34 @@
+La inyeccion de dependencias es una practica de la ingenieria de software que permite separar el codigo
+en piezas mas pequeñas y faciles de mantener.   El objetivo general de esta tecnica e separar el codigo de
+inicializacion del coodigo correspondiente a la logica de negocios. Por ejemplo, un API route handler, no
+deberia tener que estar seteando los modelos de mongoose.
+
+La inyeccion de dependencias es una parte clave para escribir codigo en Angular.js
+
+Ahora vamos a ver como utilizar la inyeccion de dependencias en el server escrito en node.js
+
+Nuevamente el principio clave de la inyeccion de dependencias es separar la construccion e inicializacion
+de dependecias del codigo que usa esas dependencias.
+
+Ejemplo: ver archivo index.js
+
+Ahora veamos que pasa cuando lo escribimos todo plano...
+
+Ejemplo: ver archivo index2.js
+
+
+Ahora la injeccion de dependencias suna bien en teoria, pero supongamos que queremos agregar parametros
+a nuestra funcion del archivo index.js
+
+function myUserFunction(User, param1, param2, ...) {
+    User.create({ name : 'john' }, function (error, doc) {
+        console.log(require('util').inspect(doc));
+    });
+}
+
+deberiamos añadir dichos parametros en todos los lugares del codigo que invoquen a myUserFunction(). Cuando ya estas
+usando esta funcion en tu codigo al igual que en los tests, agregar estos parametros nuevos rapidamente puede server
+verdaderamente incómodo. Es por eso que debemos utilizar un framwork que maneje la inyeccion de dependencias
+por nosotros. En nuestro caso vamos a usar el paquete npm llamado "wagner". Wagner es un vasto set de funcionalidades 
+que van mas alla de la inyeccion de independencias, pero en este curso lo vamos a usar como inyector de dependencias.
+(Dependency injector). ver archivo index3.js

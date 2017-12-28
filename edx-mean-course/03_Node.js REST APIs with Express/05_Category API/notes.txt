@@ -1,0 +1,18 @@
+El paquete http-sttus mencionado en el archivo package.json, tiene mapeados los codigos de estado de htttp a strings legibles.
+Por ejemplo en lugar de escribir "404", escribiremos "status.notfound". Serian algo asi como costantes para los codigos de error.
+El archivo packaje.json añade 7 dependencias externas para este ejemplo, lo cual parece mucho, en un primer momento.
+Pero los desarrolladores experimentados de node.js entienden los beneficios de usar un paquete en lugar de escribirlo uno mismo.
+Es por esto que proyectos como Atom, el editor de texto de GitHub, tiene alrededor de 150 dependencias externas. Asi que 
+esta situacion es algo normal.
+
+El archivo index.js es el punto de entrada para ejecutar nuestra aplicacion web. Index.js usa el archivo models.js para inicializar
+los modelos de mongoose (model=schemma + connection) y el erchvo api.js para inicializar la aplicacion.
+
+El archivo models.js maneja todo lo necesario para configurar Mongoose y el modelo de categorias.
+
+Veamos como el archivo index.js usa el archivo api.js
+
+el archivo api.js exporta un express.Router() al cual se le registran los endpoints del api. los endpoint o route handlers utlizan wagner
+para relizar la inyeccion de dependencias, y que los modelos sean mas faciles de reutilizar.
+
+Ahora que ya tenemos el api de categorias, vamos a ver como escribir los tests. 
